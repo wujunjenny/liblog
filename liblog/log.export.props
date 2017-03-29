@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup />
+  <ItemGroup />
+ <!--copy -->
+ <Target Name="liblog output to dest" AfterTargets="AfterBuild" >
+    <Copy 
+          SourceFiles="$(TargetDir)liblog.pdb" 
+          DestinationFiles="$(ProjectDir)..\lib\liblog.pdb"
+          SkipUnchangedFiles="true" />		  
+
+    <Copy 
+          SourceFiles="$(TargetDir)liblog.lib" 
+          DestinationFiles="$(ProjectDir)..\lib\liblog.lib"
+          SkipUnchangedFiles="true" />		  
+    <Copy 
+          SourceFiles="$(TargetDir)liblog.dll" 
+          DestinationFiles="$(ProjectDir)..\lib\liblog.dll"
+          SkipUnchangedFiles="true" />		  
+
+   <Copy 
+          SourceFiles="$(ProjectDir)log.h" 
+          DestinationFiles="$(ProjectDir)..\include\log.h"
+          SkipUnchangedFiles="true" />		  
+		  
+ </Target>
+</Project>
